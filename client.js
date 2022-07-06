@@ -10,6 +10,14 @@ const connect = function () {
     console.log(data);
   });
 
+  conn.on("connect",() => {
+    console.log("Successfully connected to gamer server");
+  });
+
+  conn.on("connect", () => {
+    conn.write("Name: KWD");
+  });
+
   // interpret incoming data as text
   conn.setEncoding("utf8");
 
