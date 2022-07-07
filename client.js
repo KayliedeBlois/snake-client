@@ -18,14 +18,14 @@ const connect = function () {
     conn.write("Name: KWD");
   });
 
-  conn.on("connect", () => {
-    console.log("Move: up");
-  });
+  // conn.on("connect", () => {
+  //   console.log("Move: up");
+  // });
 
   // TEST = Moves up continually every 50 ms
-  // setInterval(() => {
-  //   console.log("Move: up");
-  // }, 50); 
+  setInterval(() => {
+    console.log("Move: up");
+  }, 50); 
 
   // TEST = Moves up, right, down, down, left changes every 50 ms
   // conn.on("connect", () => {
