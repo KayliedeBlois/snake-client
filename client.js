@@ -1,6 +1,8 @@
 const net = require("net");
 
-const connect = function () {
+const { IP, PORT } = require("./constants");
+
+const connect = function() {
   const conn = net.createConnection({
     host: "localhost",
     port: 50541,
@@ -18,14 +20,15 @@ const connect = function () {
     conn.write("Name: KWD");
   });
 
+
   // conn.on("connect", () => {
   //   console.log("Move: up");
   // });
 
-  // TEST = Moves up continually every 50 ms
-  setInterval(() => {
-    console.log("Move: up");
-  }, 50); 
+  //TEST = Moves up continually every 50 ms
+  // setInterval(() => {
+  //   console.log("Move: up");
+  // }, 50);
 
   // TEST = Moves up, right, down, down, left changes every 50 ms
   // conn.on("connect", () => {
@@ -38,32 +41,32 @@ const connect = function () {
   // conn.on("connect", () => {
   //   setTimeout(() => {
   //     console.log("Move: right");
-  //   }, 50); 
+  //   }, 50);
   // });
 
   // conn.on("connect", () => {
   //   setTimeout(() => {
   //     console.log("Move: down");
-  //   }, 100); 
+  //   }, 100);
   // });
 
   // conn.on("connect", () => {
   //   setTimeout(() => {
   //     console.log("Move: down");
-  //   }, 150); 
+  //   }, 150);
   // });
 
   // conn.on("connect", () => {
   //   setTimeout(() => {
   //     console.log("Move: left");
-  //   }, 150); 
+  //   }, 150);
   // });
 
 
-// "Move: up" - move up one square (unless facing down)
-// "Move: down" - move down one square (unless facing up)
-// "Move: left" - move left one square (unless facing right)
-// "Move: right" - move left one square (unless facing left)
+  // "Move: up" - move up one square (unless facing down)
+  // "Move: down" - move down one square (unless facing up)
+  // "Move: left" - move left one square (unless facing right)
+  // "Move: right" - move left one square (unless facing left)
 
   // interpret incoming data as text
   conn.setEncoding("utf8");

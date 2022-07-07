@@ -4,25 +4,15 @@ const net = require("net");
 const connect = require("./client");
 // uses connect function from client.js
 
+const setupInput = require("./input");
+// uses setUpInput function from input.js
+
 
 console.log("Connecting ...");
-connect();
+setupInput(connect());
 
 // setup interface to handle user input from stdin
 
-const handleUserInput = function () {
-  if (key === 'u\0003') {
-    process.exit();
-  }
-};
+//setupInput(connect({})); // making it repeat so commented it out
 
-const setupInput = function () {
-  const stdin = process.stdin;
-  stdin.setRawMode(true);
-  stdin.setEncoding("utf8");
-  stdin.resume();
-  stdin.on("data", handleUserInput);
-  return stdin;
-};
-
-console.log(setupInput); 
+//console.log(setupInput); 
